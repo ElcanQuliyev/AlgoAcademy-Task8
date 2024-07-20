@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+  background-color: hsl(30, 38%, 92%);
+  font-family: "Montserrat", sans-serif;
+}
+
+div.flex {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  div.left {
+    flex: 1;
+    img.desk {
+      width: 100%;
+      display: block;
+    }
+    img.mob {
+      width: 100%;
+      display: none;
+    }
+  }
+  div.right {
+    flex: 1;
+    div.content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      height: 100%;
+      p.t1 {
+        letter-spacing: 8px;
+        color: hsl(228, 12%, 48%);
+        font-size: 14px;
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+      }
+      p.t2 {
+        color: hsl(228, 12%, 48%);
+        font-size: 14px;
+      }
+      div.prices {
+        display: flex;
+        gap: 16px;
+        span.now {
+          font-family: "Fraunces", serif;
+          font-size: 30px;
+          color: hsl(158, 36%, 37%);
+        }
+        span.last {
+          font-size: 15px;
+          text-decoration: line-through;
+        }
+      }
+      div.button {
+        padding: 10px 8px;
+        background-color: hsl(158, 36%, 37%);
+        display: flex;
+        gap: 8px;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        img {
+        }
+        span {
+          color: white;
+        }
+      }
+      div.button:hover{
+        background-color: darkgreen;
+      }
+    }
+  }
+}
+
+@media (max-width: 648px) {
+  body {
+    padding: 16px;
+  }
+  div.flex {
+    position: static;
+    translate: 0px 0px;
+    width: 100%;
+    flex-direction: column;
+    div.left {
+      img.desk {
+        display: none;
+      }
+      img.mob {
+        display: block;
+      }
+    }
+    div.right {
+      div.content {
+        gap: 16px;
+      }
+    }
+  }
+}
